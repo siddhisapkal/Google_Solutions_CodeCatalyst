@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "SAYALI HIRKAR",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 13.42, "left": -122.48, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 63.8,
+      "left": 134.4,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 140.4,
+      "left": 195.8,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "imu1:GND", "black", [ "h0" ] ],
+    [ "imu1:SCL", "esp:22", "green", [ "v0" ] ],
+    [ "esp:21", "imu1:SDA", "green", [ "h0" ] ],
+    [ "btn1:2.r", "esp:GND.2", "green", [ "h125", "v29" ] ],
+    [ "esp:13", "btn1:2.l", "green", [ "h-19.05", "v76.8", "h153.6", "v-9.6" ] ],
+    [ "led1:A", "esp:25", "green", [ "v76.8", "h-259.2", "v-144" ] ],
+    [ "led1:C", "esp:GND.2", "green", [ "v9.6", "h-95.6", "v-192", "h-9.6" ] ]
+  ],
+  "dependencies": {}
+}

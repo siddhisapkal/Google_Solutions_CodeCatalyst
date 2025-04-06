@@ -1,0 +1,7 @@
+{
+  "dependencies": [
+    {
+      "name": "Adafruit_MPU6050.h"
+    }
+  ]
+}
